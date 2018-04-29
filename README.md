@@ -1,24 +1,6 @@
-# README
+# Playing about with Graphql
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Built from this [tutorial](https://engineering.musefind.com/build-a-graphql-api-in-under-20-minutes-3cdaa774b786)
+To have a go run the Rails server and go to `http://localhost:3000/graphiql/graphql`
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
