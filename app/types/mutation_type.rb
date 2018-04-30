@@ -6,8 +6,8 @@ MutationType = GraphQL::ObjectType.define do
     argument :person, PersonInputType
 
     resolve ->(obj, args, ctx) do
-      person = Person.create(name: args[:person][:name], surname: args[:person][:surname])
-      pet = args[:person][:pet_name]
+      person = Person.create(name: args.person.name, surname: args.person.surname)
+      pet = args.person.pet_name
       person.pets.create(name: pet) if pet.present?
       person
     end
