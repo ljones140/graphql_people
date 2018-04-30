@@ -6,7 +6,7 @@ PetType = GraphQL::ObjectType.define do
   field :person do
     type PersonType
     resolve -> (pet, args, ctx) {
-      pet.person
+      RecordLoader.for(Person).load(pet.person_id)
     }
   end
 end

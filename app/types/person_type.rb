@@ -7,7 +7,7 @@ PersonType = GraphQL::ObjectType.define do
   field :pets do
     type types[PetType]
     resolve -> (person, args, ctx) {
-      person.pets
+      AssociationLoader.for(Person, :pets).load(person)
     }
   end
 end
