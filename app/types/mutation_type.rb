@@ -7,9 +7,9 @@ MutationType = GraphQL::ObjectType.define do
 
     resolve ->(obj, args, ctx) do
       person = Person.create(name: args.person.name, surname: args.person.surname)
-      pet = args.person.pet_name
-      person.pets.create(name: pet) if pet.present?
-      person
+      pets = args.person.pet_names
+      pets.each { |pet| person.pets.create(name: pet) } if pets.present?
+      person.reload
     end
   end
 end
@@ -26,7 +26,7 @@ PersonInputType = GraphQL::InputObjectType.define do
     description "Surname of person"
   end
 
-  argument :pet_name, types.String do
+  argument :pet_names, types[types.String] do
     description "Name of pet"
   end
 end
