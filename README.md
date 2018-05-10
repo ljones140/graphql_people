@@ -10,4 +10,6 @@ To have a go run
 bundle install
 bundle exec rails server
 ```
-Then go to `http://localhost:3000/graphiql/graphql`
+Then go to `http://localhost:3000/graphiql`
+
+The interesting code is under app/types
